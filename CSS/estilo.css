@@ -78,13 +78,17 @@ h3{
     font-size: 4;
     color: #ff0000;
 }
-#contatos{
-    width: 50%;
+#contato{
+    
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 4;
+    display: inline;
+
    
 }
+
+
 .box_produto {
     width:30%;
     text-align: center;
@@ -93,7 +97,11 @@ h3{
 .produtos {
     padding-left: 300px;
     display: block;
+    
+
 }
+
 #logo{
     padding: 8px;
 }
+
