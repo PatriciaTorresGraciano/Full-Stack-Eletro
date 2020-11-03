@@ -27,7 +27,7 @@ require_once("conexao_bd.php");
             <li onclick="exibir_categoria('geladeira')">Geladeiras (3)</li>
             <li onclick="exibir_categoria('fogao')">Fogões (2)</li>
             <li onclick="exibir_categoria('microondas')">Microondas (3)</li>
-            <li onclick="exibir_categoria('lavaRoupas')">Lavadoura de roupas(2)</li>
+            <li onclick="exibir_categoria('lavaRoupas')">Lavadora de roupas(2)</li>
             <li onclick="exibir_categoria('lavaLoucas')">Lava-louças (2)</li>
         </ol>
 
@@ -43,13 +43,13 @@ require_once("conexao_bd.php");
                 
     
     ?> 
-            <div class="box_produto" id="box_<?php echo $rows["categoria"]; ?>">   
-            <img src="<?php echo $rows["imagem"]; ?>" width="240px" onclick="destaque(this)">
+            <div class="box_conteudo" id="<?php echo $rows["categoria"]; ?>"> 
+            <img src="<?php echo $rows["imagem"]; ?>" width="240px" onMouseOver="destaque(this)" onMouseOut="destaque_voltar_tamanho(this)">
             <br>
             <p id="titulo_produto"><?php echo $rows["descricao"]; ?></p><br>
             <hr>
-            <p id="valor_antigo">R$ <?php echo $rows["preco"]; ?></p>
-            <p id="valor_atual">R$ <?php echo $rows["preco_venda"]; ?></p><br>
+            <p id="valor_antigo">R$ <?php echo number_format($rows["preco"],2,",","."); ?></p>
+            <p id="valor_atual"> R$ <?php echo number_format($rows["preco_venda"],2,",","."); ?></p><br>
         </div>
         
 

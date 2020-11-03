@@ -4,10 +4,12 @@ require_once("conexao_bd.php");
 if(isset($_POST['nome']) && isset($_POST['mensagem'])){
     $nome=$_POST['nome'];
     $mensagem=$_POST['mensagem'];
-
-
+    
     $sql="insert into comentarios (nome,mensagem) values('$nome','$mensagem')";
     $resultado=$conexao->query($sql);
+
+    header("Location: contato.php");
+
 }
 ?>
 
@@ -19,14 +21,14 @@ if(isset($_POST['nome']) && isset($_POST['mensagem'])){
     <title>Contato - Full Stack Eletro</title>
     <link rel="stylesheet" href="./CSS/estilo.css">
 </head>
-<body>
+<body onload="limparCampos()">
  <!-- menu -->
  <?php
  include_once("menu.html");
  ?>
     <h2>Contato</h2>
     <hr>
-    <section class="tabelas">
+    <div class="box_contato">
         <div id="contato">
             <img src="./img/icon_email.png" width="40px">
                 contato@fullstackeletro.com
@@ -35,8 +37,8 @@ if(isset($_POST['nome']) && isset($_POST['mensagem'])){
             <img src="./img/logo_whatsapp.png" width="50px">
                 (11) 99999-9999
         </div>
-        
-    </section> 
+    </div>
+
     
 
 <form method="post" action="contato.php">
@@ -45,7 +47,7 @@ if(isset($_POST['nome']) && isset($_POST['mensagem'])){
     Mensagem:<br>
     <input type="text" name="mensagem" style="widht:500px" value=""><br><br>
 
-    <input type="submit" name="submit" value="Enviar" value=""><br><br><br>
+    <input type="submit" name="submit" value="Enviar" value="" onClick="limparCampos()"><br><br><br>
 
 </form>
 
@@ -66,6 +68,7 @@ if($resultado->num_rows>0){
 echo "Nenhum comentário ainda!";
 }
        
+$conexao->close();
 ?> 
     
 

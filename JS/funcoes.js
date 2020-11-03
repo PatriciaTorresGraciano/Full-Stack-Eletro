@@ -21,11 +21,17 @@ let exibir_todos=()=>{
 };
 
 let destaque =(img) =>{
-    if (img.width==240){
-        img.width=120;
-    }
-    else{
-        img.width=240
-    }
+        img.width=350;
+    };
+
+
+let destaque_voltar_tamanho =(img) =>{
+    
+        img.width=240;
     
 };
+
+let limparCampos=()=>{
+    document.getElementById('nome').value='';
+    document.getElementById('mensagem').value='';
+}

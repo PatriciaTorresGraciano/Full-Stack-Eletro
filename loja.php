@@ -1,3 +1,7 @@
+<?php
+require_once("conexao_bd.php");
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -12,30 +16,32 @@
  ?>
     <h2>Nossas lojas</h2>
     <hr>
-    <table class="tabelas">
-        <tr>
-            <td>
-                <h3>Rio de Janeiro</h3>
-                <p> Avenida Presidente Vargas, 5000</p>
-                <p>10 &ordm; andar</p>
-                <p>Centro</p>
-                <p>(21) 3333-3333</p>
-            </td>
-            <td>
-                <h3>São Paulo</h3>
-                <p> Avenida Paulista, 985</p>
-                <p>3 &ordm; andar</p>
-                <p>Jardins</p>
-                <p>(11) 4444-4444</p>
-            </td>
-            <td>
-                <h3>Santa Catarina</h3>
-                <p>Rua Major &Aacute;vila, 370</p>
-                <p>Vila Mariana</p>
-                <p>(47) 5555-5555</p>
-            </td>
-        </tr>
-    </table>
+    <?php
+
+        $selecionar_lojas="SELECT * FROM loja";
+        $resultado=$conexao->query($selecionar_lojas);
+
+        if($resultado->num_rows>0){
+            while($rows=$resultado->fetch_assoc()){
+                
+    
+    ?> 
+    <div class="box_conteudo">
+            
+        <h3><?php echo $rows['cidade'];?></h3>
+        <p><?php echo $rows['endereco'];?></p>
+        <p><?php echo $rows['complemento'];?></p>
+        <p><?php echo $rows['bairro'];?></p>
+        <p><?php echo $rows['telefone'];?></p>
+            
+    </div>
+    <?php
+        }
+    } else {
+        echo"Nenhum loja cadastrada!";
+    }
+
+    ?>
 <footer class="rodape">
     <p id="formas_pagamento">Formas de pagamento</p>
     <img src="./img/formas_pagamento.png" alt="Formas de Pagamento">

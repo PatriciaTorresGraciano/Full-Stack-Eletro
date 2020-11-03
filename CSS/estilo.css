@@ -55,27 +55,20 @@ h3{
 .categorias{
     font-family: Arial, Helvetica, sans-serif;
 }
-.tabelas{
-    border:0;
-    width:100%;
-    padding: 20;
-    text-align: center;
-}
-.tabelas td{
-    width: 33%;
-}
+
 #titulo_produto{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 2;
 }
 #valor_antigo{
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 2;
+    font-size: 14px;
     text-decoration:line-through
 }
 #valor_atual{
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 4;
+    font-size: 18px;
+    font-weight: bold;
     color: #ff0000;
 }
 #contato{
@@ -83,17 +76,24 @@ h3{
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 4;
-    display: inline;
+    display: inline-block;
+  
+
+}
+.box_contato{
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+}
+
+.box_conteudo {
+    width:30%;
+    text-align: center;
+    display: inline-block;
 
    
 }
 
-
-.box_produto {
-    width:30%;
-    text-align: center;
-    display: inline-block;
-}
 .produtos {
     padding-left: 300px;
     display: block;
@@ -103,5 +103,9 @@ h3{
 
 #logo{
     padding: 8px;
+}
+
+form{
+    font-family: Arial, Helvetica, sans-serif;
 }
 
