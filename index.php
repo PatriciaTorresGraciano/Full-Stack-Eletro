@@ -7,15 +7,10 @@
 </head>
 <body>
 
-    <!-- Início do Menu -->
-    <nav class="menu">
-        <a href="index.html"><img id="logo" width="100px" src="./img/logotipo.jpeg" alt="Full Stack Eletro"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="produtos.html">Produtos</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="loja.html">Nossas Lojas</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="contato.html">Contato</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    </nav>
-    <!-- Fim do menu-->
-
+ <!-- menu -->
+ <?php
+ include_once("menu.html");
+ ?>
     <main>
         <h2>Seja bem vindo(a)!</h2>
         <p>Aqui em nossa loja, <em>programadores tem desconto</em> nos produtos para sua casa!</p>

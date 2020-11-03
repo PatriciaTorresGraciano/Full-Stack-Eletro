@@ -6,15 +6,10 @@
     <link rel="stylesheet" href="./CSS/estilo.css">
 </head>
 <body>
-    
-    <!-- Início do Menu -->
-    <nav class="menu">
-        <a href="index.html"><img id="logo" width="100px" src="./img/logotipo.jpeg" alt="Full Stack Eletro"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="produtos.html">Produtos</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="loja.html">Nossas Lojas</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="contato.html">Contato</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    </nav>
-        <!-- Fim do menu-->
+    <!-- menu -->
+ <?php
+ include_once("menu.html");
+ ?>
     <h2>Nossas lojas</h2>
     <hr>
     <table class="tabelas">
