@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 03-Nov-2020 às 16:03
+-- Tempo de geração: 03-Nov-2020 às 20:49
 -- Versão do servidor: 10.4.14-MariaDB
 -- versão do PHP: 7.4.11
 
@@ -21,7 +21,7 @@ SET time_zone = "+00:00";
 -- Banco de dados: `fseletro`
 --
 
--- ---------------------
+-- --------------------------------------------------------
 
 --
 -- Estrutura da tabela `comentarios`
@@ -29,9 +29,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `comentarios` (
   `id` int(11) NOT NULL,
-  `nome` varchar(100) DEFAULT NULL,
-  `mensagem` varchar(300) DEFAULT NULL,
-  `data` datetime DEFAULT current_timestamp()
+  `nome` varchar(100) NOT NULL,
+  `mensagem` varchar(300) NOT NULL,
+  `data` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -39,10 +39,31 @@ CREATE TABLE `comentarios` (
 --
 
 INSERT INTO `comentarios` (`id`, `nome`, `mensagem`, `data`) VALUES
-(12, 'Patricia Torres', 'teste123', '2020-11-03 11:43:26'),
-(13, 'Patrícia', 'Olá', '2020-11-03 11:43:40'),
-(27, 'Patrícia ', '123', '2020-11-03 11:51:58'),
-(28, 'Patrícia ', '123', '2020-11-03 11:52:01');
+(75, 'Patricia Torres', 'Olá, tudo bem?', '2020-11-03 16:43:24');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `loja`
+--
+
+CREATE TABLE `loja` (
+  `id` int(11) NOT NULL,
+  `cidade` varchar(255) NOT NULL,
+  `endereco` varchar(255) NOT NULL,
+  `complemento` varchar(255) DEFAULT NULL,
+  `bairro` varchar(255) DEFAULT NULL,
+  `telefone` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `loja`
+--
+
+INSERT INTO `loja` (`id`, `cidade`, `endereco`, `complemento`, `bairro`, `telefone`) VALUES
+(1, 'Rio de Janeiro', 'Avenida Presidente Vargas, 5000', '10 º andar', 'Centro', '(21) 3333-3333'),
+(2, 'São Paulo', 'Avenida Paulista, 985', '3 º andar', 'Jardins', '(11) 4444-4444'),
+(3, 'Santa Catarina', 'Rua Major Ávila, 370', '-', 'Vila Mariana', '(47) 5555-5555');
 
 -- --------------------------------------------------------
 
@@ -64,18 +85,18 @@ CREATE TABLE `produtos` (
 --
 
 INSERT INTO `produtos` (`id`, `categoria`, `descricao`, `preco`, `preco_venda`, `imagem`) VALUES
-(1, 'geladeira', 'Geladeira Frost Free Brastemp Side Inverse 540 Litros', 6389, 5019, './img/produtos/geladeira_brastemp.jpeg'),
-(2, 'geladeira', 'Geladeira Frost Free Brastemp Branca 375 Litros', 2068.68, 1910.9, './img/produtos/geladeira_brastemp_branca.jpeg'),
-(3, 'geladeira', 'Geladeira Frost Free Consul Prata 340 Litros', 2199.9, 2069, './img/produtos/geladeira_consul.jpeg'),
-(4, 'fogão', 'Fogão 4 Bocas Consul Inox com Mesa de Vidro', 1209.99, 1129, './img/produtos/fogao_consul.jpeg'),
-(5, 'fogão', 'Fogão de Piso 4 Bocas Atlas Monaco com Acendimento Automático', 600, 519.7, './img/produtos/fogao_atlas_branco.jpeg'),
-(6, 'microondas', 'Microondas Consul 32 Litros Inox 220V', 580.99, 409.88, './img/produtos/microondas_consul.jpeg'),
-(7, 'microondas', 'Microondas 25L Espelhado Philco 220V', 5080.7, 464.53, './img/produtos/microondas_espelhado.jpeg'),
-(8, 'microondas', 'Forno de Microondas Eletrolux 20L Branco', 459.99, 436.05, './img/produtos/microondas_branco.jpeg'),
-(9, 'Lava-Louças', 'Lava-Louças Eletolux Inox com 10 Serviços. 06 Programas de Lavagem e Painel Blue Touch', 3599, 2799.9, './img/produtos/lava_loucas_eletrolux.jpeg'),
-(10, 'Lava-Louças', 'Lava-Louças Compacta 8 Serviços Branca 127V Brastemp', 1970.5, 1730.61, './img/produtos/lava_louca_brastemp.jpeg'),
-(11, 'Lava-Louças', 'Lavadora de Roupas Philco Inverter 12kg', 2399.9, 2179.9, './img/produtos/lavadora_philco.jpeg'),
-(12, 'Lavadora de Roupas', 'Lavadora de Roupas Brastemp 11kg com Turbo Performance Branca', 1699, 1214.1, './img/produtos/lavadora_brastemp.jpeg');
+(1, 'geladeira', 'Geladeira Frost Free Brastemp Side Inverse 540 Litros', 6389, 5019, './img/produtos/geladeira_brastemp.JPG'),
+(2, 'geladeira', 'Geladeira Frost Free Brastemp Branca 375 Litros', 2068.68, 1910.9, './img/produtos/geladeira_brastemp_branca.JPG'),
+(3, 'geladeira', 'Geladeira Frost Free Consul Prata 340 Litros', 2199.9, 2069, './img/produtos/geladeira_consul.JPG'),
+(4, 'fogao', 'Fogão 4 Bocas Consul Inox com Mesa de Vidro', 1209.99, 1129, './img/produtos/fogao_consul.JPG'),
+(5, 'fogao', 'Fogão de Piso 4 Bocas Atlas Monaco com Acendimento Automático', 600, 519.7, './img/produtos/fogao_atlas_branco.JPG'),
+(6, 'microondas', 'Microondas Consul 32 Litros Inox 220V', 580.99, 409.88, './img/produtos/microondas_consul.JPG'),
+(7, 'microondas', 'Microondas 25L Espelhado Philco 220V', 5080.7, 464.53, './img/produtos/microondas_espelhado.JPG'),
+(8, 'microondas', 'Forno de Microondas Eletrolux 20L Branco', 459.99, 436.05, './img/produtos/microondas_branco.JPG'),
+(9, 'lavaLoucas', 'Lava-Louças Eletolux Inox com 10 Serviços. 06 Programas de Lavagem e Painel Blue Touch', 3599, 2799.9, './img/produtos/lava_loucas_eletrolux.JPG'),
+(10, 'lavaLoucas', 'Lava-Louças Compacta 8 Serviços Branca 127V Brastemp', 1970.5, 1730.61, './img/produtos/lava_louca_brastemp.JPG'),
+(11, 'lavaRoupas', 'Lavadora de Roupas Philco Inverter 12kg', 2399.9, 2179.9, './img/produtos/lavadora_philco.JPG'),
+(12, 'lavaRoupas', 'Lavadora de Roupas Brastemp 11kg com Turbo Performance Branca', 1699, 1214.1, './img/produtos/lavadora_brastemp.JPG');
 
 --
 -- Índices para tabelas despejadas
@@ -85,6 +106,12 @@ INSERT INTO `produtos` (`id`, `categoria`, `descricao`, `preco`, `preco_venda`, 
 -- Índices para tabela `comentarios`
 --
 ALTER TABLE `comentarios`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `loja`
+--
+ALTER TABLE `loja`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -101,7 +128,13 @@ ALTER TABLE `produtos`
 -- AUTO_INCREMENT de tabela `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+
+--
+-- AUTO_INCREMENT de tabela `loja`
+--
+ALTER TABLE `loja`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `produtos`
