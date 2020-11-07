@@ -33,7 +33,7 @@ h3{
     color: #ff0000;
 }
 .menu a{
-    color: #fff;
+    color: #fff !important;
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
     line-height: 50px;
@@ -41,15 +41,15 @@ h3{
 }
 .menu{
     width:100%;
-    background-color: #ff0000;
+    background-color: #ff0000 !important;
     margin-left: -8px;
-    padding: 0;
+    padding: 25px;
     
 }
 .menu td{
     text-align: center;
     width: 25%;
-    color:#fff;
+    color:#fff !important;
     font-family: Arial, Helvetica, sans-serif;
 }
 .categorias{
@@ -108,4 +108,18 @@ h3{
 form{
     font-family: Arial, Helvetica, sans-serif;
 }
+
+@media screen and (max-width:575px){
+    #produtos{
+        width: 100%;
+        
+    }
+}
+
+
+/* @media screen and (max-width:750px){
+    #produtos{
+        width: 20%;
+    }
+} */
 
