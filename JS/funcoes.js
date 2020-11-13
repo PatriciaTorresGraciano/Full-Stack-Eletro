@@ -1,6 +1,16 @@
+function redirecionar(){
+    window.location.href="./produtos.php";
+}
+
+
+
+
 function exibir_categoria(categoria){
+
+    
+   
     // alert(categoria)
-    let elementos=document.getElementsByClassName('box_produto');
+    let elementos=document.getElementsByClassName('box_conteudo');
     for(var i=0; i<elementos.length; i++){
         console.log(elementos[i].id);
         if(categoria==elementos[i].id)
@@ -12,7 +22,7 @@ function exibir_categoria(categoria){
 }
 
 let exibir_todos=()=>{
-    let elementos=document.getElementsByClassName('box_produto');
+    let elementos=document.getElementsByClassName('box_conteudo');
     
     for(var i=0; i<elementos.length; i++){
         elementos[i].style="display:inline-block";
